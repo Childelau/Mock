@@ -36,3 +36,14 @@ const data1 = Mock.mock({
 	"number|1-8.2":0
 })
 console.log(data1)
+
+
+random.extend({
+    statusCode: function () {
+        const statusCodes = [{code: 200, msg: 'SUCCESS'}, {code: 100, msg: 'complete'}, {code: -100, msg: 'fail'}]
+        return this.pick(statusCodes)
+    }
+})
+
+const statusCode = Mock.mock('@statusCode')
+console.log(statusCode)
